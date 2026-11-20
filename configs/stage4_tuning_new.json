@@ -1,0 +1,162 @@
+[
+  {
+    "hidden": [
+      32
+    ],
+    "norm": "none",
+    "activation": "gelu",
+    "dropout": 0.1,
+    "lr": 0.0009486832980505141,
+    "weight_decay": 5.623413251903491e-06,
+    "batch_size": 256,
+    "smoothing": 0.0,
+    "class_weight": false,
+    "scaling": "robust",
+    "interactions": false,
+    "domain_features": false
+  },
+  {
+    "hidden": [
+      32
+    ],
+    "norm": "none",
+    "activation": "gelu",
+    "dropout": 0.0,
+    "lr": 0.003,
+    "weight_decay": 0.00017782794100389227,
+    "batch_size": 128,
+    "smoothing": 0.0,
+    "class_weight": false,
+    "scaling": "robust",
+    "interactions": false,
+    "domain_features": false
+  },
+  {
+    "hidden": [
+      32
+    ],
+    "norm": "none",
+    "activation": "gelu",
+    "dropout": 0.05,
+    "lr": 0.0003,
+    "weight_decay": 0.001,
+    "batch_size": 512,
+    "smoothing": 0.0,
+    "class_weight": false,
+    "scaling": "robust",
+    "interactions": false,
+    "domain_features": false
+  },
+  {
+    "hidden": [
+      32
+    ],
+    "norm": "none",
+    "activation": "gelu",
+    "dropout": 0.2,
+    "lr": 0.000533483823011677,
+    "weight_decay": 1e-06,
+    "batch_size": 128,
+    "smoothing": 0.0,
+    "class_weight": false,
+    "scaling": "robust",
+    "interactions": false,
+    "domain_features": false
+  },
+  {
+    "hidden": [
+      32
+    ],
+    "norm": "none",
+    "activation": "gelu",
+    "dropout": 0.25,
+    "lr": 0.001687023975571048,
+    "weight_decay": 3.1622776601683795e-05,
+    "batch_size": 256,
+    "smoothing": 0.0,
+    "class_weight": false,
+    "scaling": "robust",
+    "interactions": false,
+    "domain_features": false
+  },
+  {
+    "hidden": [
+      64
+    ],
+    "norm": "none",
+    "activation": "gelu",
+    "dropout": 0.1,
+    "lr": 0.0009486832980505141,
+    "weight_decay": 5.623413251903491e-06,
+    "batch_size": 256,
+    "smoothing": 0.0,
+    "class_weight": false,
+    "scaling": "robust",
+    "interactions": false,
+    "domain_features": false
+  },
+  {
+    "hidden": [
+      64
+    ],
+    "norm": "none",
+    "activation": "gelu",
+    "dropout": 0.0,
+    "lr": 0.003,
+    "weight_decay": 0.00017782794100389227,
+    "batch_size": 128,
+    "smoothing": 0.0,
+    "class_weight": false,
+    "scaling": "robust",
+    "interactions": false,
+    "domain_features": false
+  },
+  {
+    "hidden": [
+      64
+    ],
+    "norm": "none",
+    "activation": "gelu",
+    "dropout": 0.05,
+    "lr": 0.0003,
+    "weight_decay": 0.001,
+    "batch_size": 512,
+    "smoothing": 0.0,
+    "class_weight": false,
+    "scaling": "robust",
+    "interactions": false,
+    "domain_features": false
+  },
+  {
+    "hidden": [
+      64
+    ],
+    "norm": "none",
+    "activation": "gelu",
+    "dropout": 0.2,
+    "lr": 0.000533483823011677,
+    "weight_decay": 1e-06,
+    "batch_size": 128,
+    "smoothing": 0.0,
+    "class_weight": false,
+    "scaling": "robust",
+    "interactions": false,
+    "domain_features": false
+  },
+  {
+    "hidden": [
+      64
+    ],
+    "norm": "none",
+    "activation": "gelu",
+    "dropout": 0.25,
+    "lr": 0.001687023975571048,
+    "weight_decay": 3.1622776601683795e-05,
+    "batch_size": 256,
+    "smoothing": 0.0,
+    "class_weight": false,
+    "scaling": "robust",
+    "interactions": false,
+    "domain_features": false
+  }
+]

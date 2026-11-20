@@ -1,0 +1,16 @@
+{
+  "hidden": [
+    64
+  ],
+  "norm": "none",
+  "activation": "gelu",
+  "dropout": 0.0,
+  "lr": 0.003,
+  "weight_decay": 0.00017782794100389227,
+  "batch_size": 128,
+  "smoothing": 0.0,
+  "class_weight": false,
+  "scaling": "robust",
+  "interactions": false,
+  "domain_features": false
+}

@@ -1,0 +1,106 @@
+{
+  "model_seeds": [
+    42,
+    123,
+    2026
+  ],
+  "final_refit_seed": 42,
+  "near_tie_threshold": 0.001,
+  "selection_rule": "Highest mean across all seeds; within 0.001 prefer smaller network, then lower seed std. This is a practical heuristic, not a significance test.",
+  "final_epoch_rule": "Median of selected configuration best epochs across all 15 seed-fold fits.",
+  "protocol_id": "8681c21e9e88ece1fdeeaf7268b010267837787d4cd3021a57da74ce120947e2",
+  "source": "runs/stage4_tuning_seed42",
+  "source_search_sha256": "b59c0efd43420934f9f1a6aab450dee1e55e1e1f76c1cd42624e311243b4d965",
+  "source_run": {
+    "mode": "cv_only",
+    "protocol_id": "8681c21e9e88ece1fdeeaf7268b010267837787d4cd3021a57da74ce120947e2",
+    "data_sha256": "5d217d2b9f87a52ff5c906c1309e8d8ee1def846360086324fa69816ef51f5d4",
+    "split_seed": 42,
+    "model_seed": 42,
+    "epochs": 200,
+    "patience": 25,
+    "device": "cpu",
+    "threads": 4,
+    "holdout_evaluated": false,
+    "core_code_sha256": "69904b061028d4dac55bba9bb0c3d97681f90b6a8d2d1b57490f42e02e8bc854",
+    "experiment_code_sha256": "58e5450826e2b8eb39a623f91ad9867bd2ce6569d1c51e883235879c5aae5281",
+    "versions": {
+      "numpy": "2.5.4",
+      "pandas": "2.3.3",
+      "scikit-learn": "1.9.1",
+      "torch": "2.15.0"
+    }
+  },
+  "reused_results": [
+    {
+      "trial": 6,
+      "config": {
+        "hidden": [
+          64
+        ],
+        "norm": "none",
+        "activation": "gelu",
+        "dropout": 0.0,
+        "lr": 0.003,
+        "weight_decay": 0.00017782794100389227,
+        "batch_size": 128,
+        "smoothing": 0.0,
+        "class_weight": false,
+        "scaling": "robust",
+        "interactions": false,
+        "domain_features": false
+      },
+      "scores": [
+        0.8095012388776872,
+        0.8042331630423316,
+        0.8143576914769102,
+        0.8152970548196373,
+        0.7866238678662386
+      ],
+      "epochs": [
+        10,
+        7,
+        6,
+        17,
+        4
+      ],
+      "mean_auroc": 0.8060026032165609,
+      "std_auroc": 0.010460411887086168
+    },
+    {
+      "trial": 4,
+      "config": {
+        "hidden": [
+          32
+        ],
+        "norm": "none",
+        "activation": "gelu",
+        "dropout": 0.25,
+        "lr": 0.001687023975571048,
+        "weight_decay": 3.1622776601683795e-05,
+        "batch_size": 256,
+        "smoothing": 0.0,
+        "class_weight": false,
+        "scaling": "robust",
+        "interactions": false,
+        "domain_features": false
+      },
+      "scores": [
+        0.8103990490234436,
+        0.8029321196959878,
+        0.8132475347991419,
+        0.8157466431574665,
+        0.7868373595350403
+      ],
+      "epochs": [
+        48,
+        52,
+        26,
+        52,
+        16
+      ],
+      "mean_auroc": 0.805832541242216,
+      "std_auroc": 0.010424527929702002
+    }
+  ]
+}

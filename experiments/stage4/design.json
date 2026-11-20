@@ -1,0 +1,42 @@
+{
+  "design_seed": 20261119,
+  "settings": [
+    {
+      "lr": 0.0009486832980505141,
+      "dropout": 0.1,
+      "weight_decay": 5.623413251903491e-06,
+      "batch_size": 256
+    },
+    {
+      "lr": 0.003,
+      "dropout": 0.0,
+      "weight_decay": 0.00017782794100389227,
+      "batch_size": 128
+    },
+    {
+      "lr": 0.0003,
+      "dropout": 0.05,
+      "weight_decay": 0.001,
+      "batch_size": 512
+    },
+    {
+      "lr": 0.000533483823011677,
+      "dropout": 0.2,
+      "weight_decay": 1e-06,
+      "batch_size": 128
+    },
+    {
+      "lr": 0.001687023975571048,
+      "dropout": 0.25,
+      "weight_decay": 3.1622776601683795e-05,
+      "batch_size": 256
+    }
+  ],
+  "rationale": "Five bounded, paired tuning combinations per structure; reuse two reference settings; no adaptive expansion.",
+  "selection_rule": "Compare CV mean, retain the top two distinct configurations for predeclared multi-seed checks in stage 5.",
+  "stage5_model_seeds": [
+    42,
+    123,
+    2026
+  ]
+}

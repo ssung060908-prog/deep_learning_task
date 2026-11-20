@@ -8,3 +8,7 @@ runs/
 
 # Keep only explicitly versioned inference weights.
 !models/task1-v1/task1.pt
+
+# Frozen v2 submission weights.
+!models/task1-v2/task1.pt
+!submission/task1/task1.pt

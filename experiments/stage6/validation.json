@@ -1,0 +1,16 @@
+{
+  "reload_exact": true,
+  "column_order_invariant": true,
+  "positive_probability_range": true,
+  "missing_column_rejected": true,
+  "empty_input_supported": true,
+  "rows_checked": 7896,
+  "probability_min": 0.01036153919994831,
+  "probability_max": 0.994962215423584,
+  "weights_sha256": "94642c2983077a59889b2663f19a7b1e3cb3df6e8823a1302a0da74bcbc46b92",
+  "parameter_count": 3777,
+  "portable_module_exact": true,
+  "bundle_cli_passed": true,
+  "submission_cli_passed": true,
+  "submission_training_reproduced_exact": true
+}

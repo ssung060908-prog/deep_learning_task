@@ -1,0 +1,18 @@
+{
+  "date": "2026-11-17",
+  "stage": 1,
+  "tests_passed": 7,
+  "protocol_id": "8681c21e9e88ece1fdeeaf7268b010267837787d4cd3021a57da74ce120947e2",
+  "data_sha256": "5d217d2b9f87a52ff5c906c1309e8d8ee1def846360086324fa69816ef51f5d4",
+  "development_rows": 6316,
+  "holdout_rows": 1580,
+  "folds": 5,
+  "split_seed": 42,
+  "real_data_training_performed": false,
+  "holdout_evaluated": false,
+  "test_training": "Synthetic data only: 2 folds, 1 epoch each.",
+  "source_pdfs": [
+    "Deep Learning_week 9.pdf (pages 8-19)",
+    "HELOC description.xlsx - feature_dictionary.pdf (pages 1-3)"
+  ]
+}

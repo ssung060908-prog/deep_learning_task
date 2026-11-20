@@ -1,0 +1,39 @@
+{
+  "format_version": 1,
+  "config": {
+    "hidden": [
+      32
+    ],
+    "norm": "none",
+    "activation": "gelu",
+    "dropout": 0.25,
+    "lr": 0.001687023975571048,
+    "weight_decay": 3.1622776601683795e-05,
+    "batch_size": 256,
+    "smoothing": 0.0,
+    "class_weight": false,
+    "scaling": "robust",
+    "interactions": false,
+    "domain_features": false
+  },
+  "epochs": 37,
+  "model_seed": 42,
+  "protocol_id": "8681c21e9e88ece1fdeeaf7268b010267837787d4cd3021a57da74ce120947e2",
+  "data_sha256": "5d217d2b9f87a52ff5c906c1309e8d8ee1def846360086324fa69816ef51f5d4",
+  "source_search_sha256": {
+    "42": "b59c0efd43420934f9f1a6aab450dee1e55e1e1f76c1cd42624e311243b4d965",
+    "123": "347561a4d6f6200bc505a7cbd25be2f0af60cb518304f7af54a8556c0257e8c8",
+    "2026": "83ab94b28660301126c12bef10c13a29c5c1fa5562174ab3255f037255390693"
+  },
+  "core_code_sha256": "69904b061028d4dac55bba9bb0c3d97681f90b6a8d2d1b57490f42e02e8bc854",
+  "versions": {
+    "numpy": "2.5.4",
+    "pandas": "2.3.3",
+    "scikit-learn": "1.9.1",
+    "torch": "2.15.0"
+  },
+  "candidate": "B",
+  "mean_cv_auroc": 0.8058958924996884,
+  "seed_std": 0.00020649208448682364,
+  "note": "Frozen before holdout evaluation. Same chosen config, seed, epoch count for development-only evaluation and separate all-data refit. No best-seed selection. Holdout was already observed historically; do not describe it as untouched."
+}

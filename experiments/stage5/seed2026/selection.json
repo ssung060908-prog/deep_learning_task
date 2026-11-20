@@ -1,0 +1,26 @@
+{
+  "config": {
+    "hidden": [
+      64
+    ],
+    "norm": "none",
+    "activation": "gelu",
+    "dropout": 0.0,
+    "lr": 0.003,
+    "weight_decay": 0.00017782794100389227,
+    "batch_size": 128,
+    "smoothing": 0.0,
+    "class_weight": false,
+    "scaling": "robust",
+    "interactions": false,
+    "domain_features": false
+  },
+  "epochs": 12,
+  "selected_cv_auroc": 0.8061600373858152,
+  "protocol_id": "8681c21e9e88ece1fdeeaf7268b010267837787d4cd3021a57da74ce120947e2",
+  "data_sha256": "5d217d2b9f87a52ff5c906c1309e8d8ee1def846360086324fa69816ef51f5d4",
+  "model_seed": 2026,
+  "split_seed": 42,
+  "holdout_evaluated": false,
+  "note": "CV selection result only. No holdout evaluation, all-data refit, or submission weights."
+}

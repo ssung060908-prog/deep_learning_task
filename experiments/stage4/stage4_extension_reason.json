@@ -1,0 +1,57 @@
+{
+  "reason": "Maximum epoch reached before patience elapsed; same candidates and seeds, epoch-independent schedule.",
+  "old_max_epochs": 200,
+  "new_max_epochs": 500,
+  "candidates": [
+    {
+      "trial": 3,
+      "config": {
+        "hidden": [
+          32
+        ],
+        "norm": "none",
+        "activation": "gelu",
+        "dropout": 0.05,
+        "lr": 0.0003,
+        "weight_decay": 0.001,
+        "batch_size": 512,
+        "smoothing": 0.0,
+        "class_weight": false,
+        "scaling": "robust",
+        "interactions": false,
+        "domain_features": false
+      },
+      "capped_folds": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "trial": 8,
+      "config": {
+        "hidden": [
+          64
+        ],
+        "norm": "none",
+        "activation": "gelu",
+        "dropout": 0.05,
+        "lr": 0.0003,
+        "weight_decay": 0.001,
+        "batch_size": 512,
+        "smoothing": 0.0,
+        "class_weight": false,
+        "scaling": "robust",
+        "interactions": false,
+        "domain_features": false
+      },
+      "capped_folds": [
+        1,
+        2,
+        3
+      ]
+    }
+  ]
+}

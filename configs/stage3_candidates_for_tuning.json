@@ -1,0 +1,34 @@
+[
+  {
+    "hidden": [
+      32
+    ],
+    "norm": "none",
+    "activation": "gelu",
+    "dropout": 0.1,
+    "lr": 0.0012204680039734717,
+    "weight_decay": 6.030364379156746e-05,
+    "batch_size": 256,
+    "smoothing": 0.0,
+    "class_weight": false,
+    "scaling": "robust",
+    "interactions": false,
+    "domain_features": false
+  },
+  {
+    "hidden": [
+      64
+    ],
+    "norm": "none",
+    "activation": "gelu",
+    "dropout": 0.1,
+    "lr": 0.0012204680039734717,
+    "weight_decay": 6.030364379156746e-05,
+    "batch_size": 256,
+    "smoothing": 0.0,
+    "class_weight": false,
+    "scaling": "robust",
+    "interactions": false,
+    "domain_features": false
+  }
+]

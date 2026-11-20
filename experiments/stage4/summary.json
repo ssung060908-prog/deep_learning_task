@@ -1,0 +1,629 @@
+{
+  "date": "2026-11-19",
+  "stage": 4,
+  "candidates": 12,
+  "new_cv_fits": 60,
+  "reused_cv_fits": 10,
+  "additional_epoch_check_fits": 10,
+  "protocol_id": "8681c21e9e88ece1fdeeaf7268b010267837787d4cd3021a57da74ce120947e2",
+  "model_seed": 42,
+  "selected_cv_auroc": 0.8060026032165609,
+  "selected_config": {
+    "hidden": [
+      64
+    ],
+    "norm": "none",
+    "activation": "gelu",
+    "dropout": 0.0,
+    "lr": 0.003,
+    "weight_decay": 0.00017782794100389227,
+    "batch_size": 128,
+    "smoothing": 0.0,
+    "class_weight": false,
+    "scaling": "robust",
+    "interactions": false,
+    "domain_features": false
+  },
+  "delta_vs_v1": 0.0006572550774945896,
+  "delta_vs_stage3_best": 0.00047054052395545387,
+  "finalists": [
+    {
+      "hidden": [
+        64
+      ],
+      "norm": "none",
+      "activation": "gelu",
+      "dropout": 0.0,
+      "lr": 0.003,
+      "weight_decay": 0.00017782794100389227,
+      "batch_size": 128,
+      "smoothing": 0.0,
+      "class_weight": false,
+      "scaling": "robust",
+      "interactions": false,
+      "domain_features": false
+    },
+    {
+      "hidden": [
+        32
+      ],
+      "norm": "none",
+      "activation": "gelu",
+      "dropout": 0.25,
+      "lr": 0.001687023975571048,
+      "weight_decay": 3.1622776601683795e-05,
+      "batch_size": 256,
+      "smoothing": 0.0,
+      "class_weight": false,
+      "scaling": "robust",
+      "interactions": false,
+      "domain_features": false
+    }
+  ],
+  "stage5_model_seeds": [
+    42,
+    123,
+    2026
+  ],
+  "holdout_evaluated": false,
+  "final_weights_created": false,
+  "extended_prefix_reproduced": true,
+  "capped_folds_remaining": [],
+  "status": "Provisional CV selection only; close candidates require multi-seed validation in stage 5.",
+  "results": [
+    {
+      "trial": 6,
+      "config": {
+        "hidden": [
+          64
+        ],
+        "norm": "none",
+        "activation": "gelu",
+        "dropout": 0.0,
+        "lr": 0.003,
+        "weight_decay": 0.00017782794100389227,
+        "batch_size": 128,
+        "smoothing": 0.0,
+        "class_weight": false,
+        "scaling": "robust",
+        "interactions": false,
+        "domain_features": false
+      },
+      "scores": [
+        0.8095012388776872,
+        0.8042331630423316,
+        0.8143576914769102,
+        0.8152970548196373,
+        0.7866238678662386
+      ],
+      "epochs": [
+        10,
+        7,
+        6,
+        17,
+        4
+      ],
+      "mean_auroc": 0.8060026032165609,
+      "std_auroc": 0.010460411887086168,
+      "reused": false,
+      "max_epochs": 200,
+      "delta_vs_v1": 0.0006572550774945896,
+      "fold_deltas_vs_v1": [
+        -0.0006670879853940548,
+        0.0019189133525223667,
+        0.0014316500143164435,
+        0.0005776833391102354,
+        2.5116666917845976e-05
+      ],
+      "rank": 1
+    },
+    {
+      "trial": 4,
+      "config": {
+        "hidden": [
+          32
+        ],
+        "norm": "none",
+        "activation": "gelu",
+        "dropout": 0.25,
+        "lr": 0.001687023975571048,
+        "weight_decay": 3.1622776601683795e-05,
+        "batch_size": 256,
+        "smoothing": 0.0,
+        "class_weight": false,
+        "scaling": "robust",
+        "interactions": false,
+        "domain_features": false
+      },
+      "scores": [
+        0.8103990490234436,
+        0.8029321196959878,
+        0.8132475347991419,
+        0.8157466431574665,
+        0.7868373595350403
+      ],
+      "epochs": [
+        48,
+        52,
+        26,
+        52,
+        16
+      ],
+      "mean_auroc": 0.805832541242216,
+      "std_auroc": 0.010424527929702002,
+      "reused": false,
+      "max_epochs": 200,
+      "delta_vs_v1": 0.0004871931031497079,
+      "fold_deltas_vs_v1": [
+        0.00023072216036235105,
+        0.0006178700061785225,
+        0.00032149333654818424,
+        0.0010272716769393897,
+        0.00023860833571953677
+      ],
+      "rank": 2
+    },
+    {
+      "trial": 9,
+      "config": {
+        "hidden": [
+          64
+        ],
+        "norm": "none",
+        "activation": "gelu",
+        "dropout": 0.25,
+        "lr": 0.001687023975571048,
+        "weight_decay": 3.1622776601683795e-05,
+        "batch_size": 256,
+        "smoothing": 0.0,
+        "class_weight": false,
+        "scaling": "robust",
+        "interactions": false,
+        "domain_features": false
+      },
+      "scores": [
+        0.810045442234193,
+        0.8028416996950837,
+        0.812785388127854,
+        0.8157466431574664,
+        0.7870533628705336
+      ],
+      "epochs": [
+        42,
+        20,
+        19,
+        33,
+        11
+      ],
+      "mean_auroc": 0.805694507217026,
+      "std_auroc": 0.010255607616170405,
+      "reused": false,
+      "max_epochs": 200,
+      "delta_vs_v1": 0.00034915907795962653,
+      "fold_deltas_vs_v1": [
+        -0.00012288462888832008,
+        0.0005274500052744324,
+        -0.00014065333473978203,
+        0.0010272716769392787,
+        0.00045461167121285673
+      ],
+      "rank": 3
+    },
+    {
+      "trial": 8,
+      "config": {
+        "hidden": [
+          64
+        ],
+        "norm": "none",
+        "activation": "gelu",
+        "dropout": 0.2,
+        "lr": 0.000533483823011677,
+        "weight_decay": 1e-06,
+        "batch_size": 128,
+        "smoothing": 0.0,
+        "class_weight": false,
+        "scaling": "robust",
+        "interactions": false,
+        "domain_features": false
+      },
+      "scores": [
+        0.8102561015980017,
+        0.8025001130250011,
+        0.8123584047902506,
+        0.8155030114883635,
+        0.7875356028753561
+      ],
+      "epochs": [
+        72,
+        45,
+        35,
+        170,
+        21
+      ],
+      "mean_auroc": 0.8056306467553945,
+      "std_auroc": 0.010013510878358146,
+      "reused": false,
+      "max_epochs": 200,
+      "delta_vs_v1": 0.0002852986163282001,
+      "fold_deltas_vs_v1": [
+        8.777473492038723e-05,
+        0.00018586333519188258,
+        -0.0005676366723431636,
+        0.0007836400078363726,
+        0.0009368516760352996
+      ],
+      "rank": 4
+    },
+    {
+      "trial": 3,
+      "config": {
+        "hidden": [
+          32
+        ],
+        "norm": "none",
+        "activation": "gelu",
+        "dropout": 0.2,
+        "lr": 0.000533483823011677,
+        "weight_decay": 1e-06,
+        "batch_size": 128,
+        "smoothing": 0.0,
+        "class_weight": false,
+        "scaling": "robust",
+        "interactions": false,
+        "domain_features": false
+      },
+      "scores": [
+        0.810446698165257,
+        0.8026382546930492,
+        0.8133128381331285,
+        0.8148826298154929,
+        0.7868348478683483
+      ],
+      "epochs": [
+        117,
+        79,
+        65,
+        74,
+        39
+      ],
+      "mean_auroc": 0.8056230537350553,
+      "std_auroc": 0.010296074823719963,
+      "reused": false,
+      "max_epochs": 200,
+      "delta_vs_v1": 0.00027770559598894184,
+      "fold_deltas_vs_v1": [
+        0.0002783713021757839,
+        0.00032400500323992443,
+        0.0003867966705347614,
+        0.0001632583349657768,
+        0.00023609666902757453
+      ],
+      "rank": 5
+    },
+    {
+      "trial": 2,
+      "config": {
+        "hidden": [
+          64
+        ],
+        "norm": "none",
+        "activation": "gelu",
+        "dropout": 0.1,
+        "lr": 0.0012204680039734717,
+        "weight_decay": 6.030364379156746e-05,
+        "batch_size": 256,
+        "smoothing": 0.0,
+        "class_weight": false,
+        "scaling": "robust",
+        "interactions": false,
+        "domain_features": false
+      },
+      "scores": [
+        0.8105294572010393,
+        0.8023192730231927,
+        0.8123935681239357,
+        0.8150936098176027,
+        0.7871889928718899
+      ],
+      "epochs": [
+        46,
+        29,
+        26,
+        33,
+        16
+      ],
+      "mean_auroc": 0.805504980207532,
+      "std_auroc": 0.010102118121296978,
+      "reused": true,
+      "max_epochs": 200,
+      "delta_vs_v1": 0.00015963206846569822,
+      "fold_deltas_vs_v1": [
+        0.00036113033795803773,
+        5.023333383480377e-06,
+        -0.0005324733386580238,
+        0.0003742383370756164,
+        0.0005902416725691584
+      ],
+      "rank": 6
+    },
+    {
+      "trial": 5,
+      "config": {
+        "hidden": [
+          64
+        ],
+        "norm": "none",
+        "activation": "gelu",
+        "dropout": 0.1,
+        "lr": 0.0009486832980505141,
+        "weight_decay": 5.623413251903491e-06,
+        "batch_size": 256,
+        "smoothing": 0.0,
+        "class_weight": false,
+        "scaling": "robust",
+        "interactions": false,
+        "domain_features": false
+      },
+      "scores": [
+        0.8103965411738743,
+        0.8024021580240217,
+        0.8123131947897986,
+        0.814870071482034,
+        0.7872241562055748
+      ],
+      "epochs": [
+        65,
+        32,
+        26,
+        86,
+        21
+      ],
+      "mean_auroc": 0.8054412243350608,
+      "std_auroc": 0.010017782156765326,
+      "reused": false,
+      "max_epochs": 200,
+      "delta_vs_v1": 9.587619599449315e-05,
+      "fold_deltas_vs_v1": [
+        0.0002282143107930068,
+        8.790833421246091e-05,
+        -0.0006128466727951531,
+        0.00015070000150696483,
+        0.0006254050062540761
+      ],
+      "rank": 7
+    },
+    {
+      "trial": 0,
+      "config": {
+        "hidden": [
+          32
+        ],
+        "norm": "none",
+        "activation": "gelu",
+        "dropout": 0.1,
+        "lr": 0.0012204680039734717,
+        "weight_decay": 6.030364379156746e-05,
+        "batch_size": 256,
+        "smoothing": 0.0,
+        "class_weight": false,
+        "scaling": "robust",
+        "interactions": false,
+        "domain_features": false
+      },
+      "scores": [
+        0.8101683268630813,
+        0.8023142496898092,
+        0.8129260414625937,
+        0.8147193714805271,
+        0.7865987511993208
+      ],
+      "epochs": [
+        48,
+        40,
+        36,
+        52,
+        18
+      ],
+      "mean_auroc": 0.8053453481390663,
+      "std_auroc": 0.010288078569628939,
+      "reused": true,
+      "max_epochs": 200,
+      "delta_vs_v1": 0.0,
+      "fold_deltas_vs_v1": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rank": 8
+    },
+    {
+      "trial": 0,
+      "config": {
+        "hidden": [
+          32
+        ],
+        "norm": "none",
+        "activation": "gelu",
+        "dropout": 0.1,
+        "lr": 0.0009486832980505141,
+        "weight_decay": 5.623413251903491e-06,
+        "batch_size": 256,
+        "smoothing": 0.0,
+        "class_weight": false,
+        "scaling": "robust",
+        "interactions": false,
+        "domain_features": false
+      },
+      "scores": [
+        0.8100805521281611,
+        0.802130898021309,
+        0.8129988797966555,
+        0.8145762064790955,
+        0.7864179111975124
+      ],
+      "epochs": [
+        75,
+        52,
+        50,
+        65,
+        25
+      ],
+      "mean_auroc": 0.8052408895245466,
+      "std_auroc": 0.010341503276323605,
+      "reused": false,
+      "max_epochs": 200,
+      "delta_vs_v1": -0.00010445861451968685,
+      "fold_deltas_vs_v1": [
+        -8.777473492016519e-05,
+        -0.00018335166850025342,
+        7.283833406179774e-05,
+        -0.00014316500143163324,
+        -0.0001808400018084022
+      ],
+      "rank": 9
+    },
+    {
+      "trial": 1,
+      "config": {
+        "hidden": [
+          32
+        ],
+        "norm": "none",
+        "activation": "gelu",
+        "dropout": 0.0,
+        "lr": 0.003,
+        "weight_decay": 0.00017782794100389227,
+        "batch_size": 128,
+        "smoothing": 0.0,
+        "class_weight": false,
+        "scaling": "robust",
+        "interactions": false,
+        "domain_features": false
+      },
+      "scores": [
+        0.8091877576815432,
+        0.8028291413616246,
+        0.8134534914678682,
+        0.8135815864691491,
+        0.7862044195287108
+      ],
+      "epochs": [
+        14,
+        13,
+        12,
+        11,
+        4
+      ],
+      "mean_auroc": 0.8050512793017791,
+      "std_auroc": 0.010204075493357443,
+      "reused": false,
+      "max_epochs": 200,
+      "delta_vs_v1": -0.0002940688372872202,
+      "fold_deltas_vs_v1": [
+        -0.0009805691815381046,
+        0.0005148916718153984,
+        0.0005274500052744324,
+        -0.0011377850113779564,
+        -0.000394331670609982
+      ],
+      "rank": 10
+    },
+    {
+      "trial": 1,
+      "config": {
+        "hidden": [
+          64
+        ],
+        "norm": "none",
+        "activation": "gelu",
+        "dropout": 0.05,
+        "lr": 0.0003,
+        "weight_decay": 0.001,
+        "batch_size": 512,
+        "smoothing": 0.0,
+        "class_weight": false,
+        "scaling": "robust",
+        "interactions": false,
+        "domain_features": false
+      },
+      "scores": [
+        0.8081269373137921,
+        0.8011362780113627,
+        0.810813729774804,
+        0.8134359098010258,
+        0.7866741012000744
+      ],
+      "epochs": [
+        462,
+        376,
+        201,
+        175,
+        142
+      ],
+      "mean_auroc": 0.8040373912202119,
+      "std_auroc": 0.00960078747963768,
+      "reused": false,
+      "max_epochs": 500,
+      "extended_from_trial": 8,
+      "delta_vs_v1": -0.001307956918854436,
+      "fold_deltas_vs_v1": [
+        -0.0020413895492891188,
+        -0.0011779716784465766,
+        -0.002112311687789692,
+        -0.0012834616795013298,
+        7.535000075364895e-05
+      ],
+      "rank": 11
+    },
+    {
+      "trial": 0,
+      "config": {
+        "hidden": [
+          32
+        ],
+        "norm": "none",
+        "activation": "gelu",
+        "dropout": 0.05,
+        "lr": 0.0003,
+        "weight_decay": 0.001,
+        "batch_size": 512,
+        "smoothing": 0.0,
+        "class_weight": false,
+        "scaling": "robust",
+        "interactions": false,
+        "domain_features": false
+      },
+      "scores": [
+        0.8064040446597851,
+        0.7987150313204836,
+        0.8107107514404409,
+        0.8127527364608607,
+        0.7861717678617177
+      ],
+      "epochs": [
+        336,
+        402,
+        410,
+        320,
+        201
+      ],
+      "mean_auroc": 0.8029508663486575,
+      "std_auroc": 0.00967158062782869,
+      "reused": false,
+      "max_epochs": 500,
+      "extended_from_trial": 3,
+      "delta_vs_v1": -0.002394481790408798,
+      "fold_deltas_vs_v1": [
+        -0.0037642822032961654,
+        -0.0035992183693256408,
+        -0.002215290022152816,
+        -0.0019666350196664295,
+        -0.0004269833376030485
+      ],
+      "rank": 12
+    }
+  ]
+}

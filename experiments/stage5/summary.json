@@ -1,0 +1,196 @@
+{
+  "date": "2026-11-19",
+  "stage": 5,
+  "new_cv_fits": 20,
+  "reused_cv_fits": 10,
+  "protocol_id": "8681c21e9e88ece1fdeeaf7268b010267837787d4cd3021a57da74ce120947e2",
+  "model_seeds": [
+    42,
+    123,
+    2026
+  ],
+  "selection_rule": "Highest mean across all seeds; within 0.001 prefer smaller network, then lower seed std. This is a practical heuristic, not a significance test.",
+  "highest_mean_candidate": "A",
+  "selected_candidate": "B",
+  "selected_config": {
+    "hidden": [
+      32
+    ],
+    "norm": "none",
+    "activation": "gelu",
+    "dropout": 0.25,
+    "lr": 0.001687023975571048,
+    "weight_decay": 3.1622776601683795e-05,
+    "batch_size": 256,
+    "smoothing": 0.0,
+    "class_weight": false,
+    "scaling": "robust",
+    "interactions": false,
+    "domain_features": false
+  },
+  "selected_mean_cv_auroc": 0.8058958924996884,
+  "selected_seed_std": 0.00020649208448682364,
+  "gap_to_highest_mean": 6.990169438358951e-05,
+  "seedwise_a_minus_b": [
+    0.00017006197434488168,
+    -0.00043970351706157373,
+    0.0004793466258675716
+  ],
+  "final_refit_seed": 42,
+  "final_epochs": 37,
+  "holdout_evaluated": false,
+  "final_weights_created": false,
+  "capped_folds_remaining": [],
+  "results": [
+    {
+      "candidate": "A",
+      "config": {
+        "hidden": [
+          64
+        ],
+        "norm": "none",
+        "activation": "gelu",
+        "dropout": 0.0,
+        "lr": 0.003,
+        "weight_decay": 0.00017782794100389227,
+        "batch_size": 128,
+        "smoothing": 0.0,
+        "class_weight": false,
+        "scaling": "robust",
+        "interactions": false,
+        "domain_features": false
+      },
+      "parameters": 7553,
+      "model_seeds": [
+        42,
+        123,
+        2026
+      ],
+      "seed_mean_aurocs": [
+        0.8060026032165609,
+        0.8057347419798399,
+        0.8061600373858152
+      ],
+      "mean_auroc": 0.805965794194072,
+      "seed_std": 0.0001755661768647909,
+      "seed_min": 0.8057347419798399,
+      "seed_max": 0.8061600373858152,
+      "median_best_epoch": 11,
+      "all_best_epochs": [
+        10,
+        7,
+        6,
+        17,
+        4,
+        17,
+        12,
+        11,
+        17,
+        8,
+        12,
+        16,
+        7,
+        16,
+        7
+      ],
+      "seed_fold_scores": [
+        [
+          0.8095012388776872,
+          0.8042331630423316,
+          0.8143576914769102,
+          0.8152970548196373,
+          0.7866238678662386
+        ],
+        [
+          0.8115376127278382,
+          0.8034269180342692,
+          0.8117380231173801,
+          0.8147469998141368,
+          0.7872241562055748
+        ],
+        [
+          0.8104818080592253,
+          0.8036404097030706,
+          0.8128331097949978,
+          0.8168894515022279,
+          0.7869554078695541
+        ]
+      ]
+    },
+    {
+      "candidate": "B",
+      "config": {
+        "hidden": [
+          32
+        ],
+        "norm": "none",
+        "activation": "gelu",
+        "dropout": 0.25,
+        "lr": 0.001687023975571048,
+        "weight_decay": 3.1622776601683795e-05,
+        "batch_size": 256,
+        "smoothing": 0.0,
+        "class_weight": false,
+        "scaling": "robust",
+        "interactions": false,
+        "domain_features": false
+      },
+      "parameters": 3777,
+      "model_seeds": [
+        42,
+        123,
+        2026
+      ],
+      "seed_mean_aurocs": [
+        0.805832541242216,
+        0.8061744454969014,
+        0.8056806907599476
+      ],
+      "mean_auroc": 0.8058958924996884,
+      "seed_std": 0.00020649208448682364,
+      "seed_min": 0.8056806907599476,
+      "seed_max": 0.8061744454969014,
+      "median_best_epoch": 37,
+      "all_best_epochs": [
+        48,
+        52,
+        26,
+        52,
+        16,
+        66,
+        32,
+        37,
+        37,
+        20,
+        41,
+        33,
+        24,
+        42,
+        21
+      ],
+      "seed_fold_scores": [
+        [
+          0.8103990490234436,
+          0.8029321196959878,
+          0.8132475347991419,
+          0.8157466431574665,
+          0.7868373595350403
+        ],
+        [
+          0.8110059486191781,
+          0.8036353863696871,
+          0.8129436231294361,
+          0.8155055231550552,
+          0.7877817462111508
+        ],
+        [
+          0.8100529657829005,
+          0.8034444997011115,
+          0.8121122614544559,
+          0.8154866856548669,
+          0.7873070412064037
+        ]
+      ]
+    }
+  ]
+}

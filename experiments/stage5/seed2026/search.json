@@ -1,0 +1,72 @@
+[
+  {
+    "trial": 0,
+    "config": {
+      "hidden": [
+        64
+      ],
+      "norm": "none",
+      "activation": "gelu",
+      "dropout": 0.0,
+      "lr": 0.003,
+      "weight_decay": 0.00017782794100389227,
+      "batch_size": 128,
+      "smoothing": 0.0,
+      "class_weight": false,
+      "scaling": "robust",
+      "interactions": false,
+      "domain_features": false
+    },
+    "scores": [
+      0.8104818080592253,
+      0.8036404097030706,
+      0.8128331097949978,
+      0.8168894515022279,
+      0.7869554078695541
+    ],
+    "epochs": [
+      12,
+      16,
+      7,
+      16,
+      7
+    ],
+    "mean_auroc": 0.8061600373858152,
+    "std_auroc": 0.010521352032222079
+  },
+  {
+    "trial": 1,
+    "config": {
+      "hidden": [
+        32
+      ],
+      "norm": "none",
+      "activation": "gelu",
+      "dropout": 0.25,
+      "lr": 0.001687023975571048,
+      "weight_decay": 3.1622776601683795e-05,
+      "batch_size": 256,
+      "smoothing": 0.0,
+      "class_weight": false,
+      "scaling": "robust",
+      "interactions": false,
+      "domain_features": false
+    },
+    "scores": [
+      0.8100529657829005,
+      0.8034444997011115,
+      0.8121122614544559,
+      0.8154866856548669,
+      0.7873070412064037
+    ],
+    "epochs": [
+      41,
+      33,
+      24,
+      42,
+      21
+    ],
+    "mean_auroc": 0.8056806907599476,
+    "std_auroc": 0.009992306787944834
+  }
+]

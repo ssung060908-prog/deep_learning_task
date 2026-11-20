@@ -1,0 +1,98 @@
+[
+  {
+    "hidden": [
+      32
+    ],
+    "norm": "none",
+    "activation": "gelu",
+    "dropout": 0.1,
+    "lr": 0.0012204680039734717,
+    "weight_decay": 6.030364379156746e-05,
+    "batch_size": 256,
+    "smoothing": 0.0,
+    "class_weight": false,
+    "scaling": "robust",
+    "interactions": false,
+    "domain_features": false
+  },
+  {
+    "hidden": [
+      32
+    ],
+    "norm": "none",
+    "activation": "gelu",
+    "dropout": 0.1,
+    "lr": 0.0012204680039734717,
+    "weight_decay": 6.030364379156746e-05,
+    "batch_size": 256,
+    "smoothing": 0.0,
+    "class_weight": false,
+    "scaling": "robust",
+    "interactions": false,
+    "domain_features": true
+  },
+  {
+    "hidden": [
+      32
+    ],
+    "norm": "none",
+    "activation": "gelu",
+    "dropout": 0.1,
+    "lr": 0.0012204680039734717,
+    "weight_decay": 6.030364379156746e-05,
+    "batch_size": 256,
+    "smoothing": 0.0,
+    "class_weight": false,
+    "scaling": "standard",
+    "interactions": false,
+    "domain_features": false
+  },
+  {
+    "hidden": [
+      32
+    ],
+    "norm": "none",
+    "activation": "gelu",
+    "dropout": 0.1,
+    "lr": 0.0012204680039734717,
+    "weight_decay": 6.030364379156746e-05,
+    "batch_size": 256,
+    "smoothing": 0.0,
+    "class_weight": false,
+    "scaling": "standard",
+    "interactions": false,
+    "domain_features": true
+  },
+  {
+    "hidden": [
+      32
+    ],
+    "norm": "none",
+    "activation": "gelu",
+    "dropout": 0.1,
+    "lr": 0.0012204680039734717,
+    "weight_decay": 6.030364379156746e-05,
+    "batch_size": 256,
+    "smoothing": 0.0,
+    "class_weight": false,
+    "scaling": "quantile",
+    "interactions": false,
+    "domain_features": false
+  },
+  {
+    "hidden": [
+      32
+    ],
+    "norm": "none",
+    "activation": "gelu",
+    "dropout": 0.1,
+    "lr": 0.0012204680039734717,
+    "weight_decay": 6.030364379156746e-05,
+    "batch_size": 256,
+    "smoothing": 0.0,
+    "class_weight": false,
+    "scaling": "quantile",
+    "interactions": false,
+    "domain_features": true
+  }
+]

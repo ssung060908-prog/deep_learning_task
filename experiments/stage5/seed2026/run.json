@@ -1,0 +1,20 @@
+{
+  "mode": "cv_only",
+  "protocol_id": "8681c21e9e88ece1fdeeaf7268b010267837787d4cd3021a57da74ce120947e2",
+  "data_sha256": "5d217d2b9f87a52ff5c906c1309e8d8ee1def846360086324fa69816ef51f5d4",
+  "split_seed": 42,
+  "model_seed": 2026,
+  "epochs": 200,
+  "patience": 25,
+  "device": "cpu",
+  "threads": 4,
+  "holdout_evaluated": false,
+  "core_code_sha256": "69904b061028d4dac55bba9bb0c3d97681f90b6a8d2d1b57490f42e02e8bc854",
+  "experiment_code_sha256": "58e5450826e2b8eb39a623f91ad9867bd2ce6569d1c51e883235879c5aae5281",
+  "versions": {
+    "numpy": "2.5.4",
+    "pandas": "2.3.3",
+    "scikit-learn": "1.9.1",
+    "torch": "2.15.0"
+  }
+}
