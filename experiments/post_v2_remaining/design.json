@@ -1,0 +1,137 @@
+{
+  "date": "2026-11-22",
+  "config": {
+    "hidden": [
+      32
+    ],
+    "norm": "none",
+    "activation": "gelu",
+    "dropout": 0.25,
+    "lr": 0.001687023975571048,
+    "weight_decay": 3.1622776601683795e-05,
+    "batch_size": 256,
+    "smoothing": 0.0,
+    "class_weight": false,
+    "scaling": "robust",
+    "interactions": false,
+    "domain_features": false
+  },
+  "baseline": {
+    "42": {
+      "trial": 4,
+      "config": {
+        "hidden": [
+          32
+        ],
+        "norm": "none",
+        "activation": "gelu",
+        "dropout": 0.25,
+        "lr": 0.001687023975571048,
+        "weight_decay": 3.1622776601683795e-05,
+        "batch_size": 256,
+        "smoothing": 0.0,
+        "class_weight": false,
+        "scaling": "robust",
+        "interactions": false,
+        "domain_features": false
+      },
+      "scores": [
+        0.8103990490234436,
+        0.8029321196959878,
+        0.8132475347991419,
+        0.8157466431574665,
+        0.7868373595350403
+      ],
+      "epochs": [
+        48,
+        52,
+        26,
+        52,
+        16
+      ],
+      "mean_auroc": 0.805832541242216,
+      "std_auroc": 0.010424527929702002
+    },
+    "123": {
+      "trial": 1,
+      "config": {
+        "hidden": [
+          32
+        ],
+        "norm": "none",
+        "activation": "gelu",
+        "dropout": 0.25,
+        "lr": 0.001687023975571048,
+        "weight_decay": 3.1622776601683795e-05,
+        "batch_size": 256,
+        "smoothing": 0.0,
+        "class_weight": false,
+        "scaling": "robust",
+        "interactions": false,
+        "domain_features": false
+      },
+      "scores": [
+        0.8110059486191781,
+        0.8036353863696871,
+        0.8129436231294361,
+        0.8155055231550552,
+        0.7877817462111508
+      ],
+      "epochs": [
+        66,
+        32,
+        37,
+        37,
+        20
+      ],
+      "mean_auroc": 0.8061744454969014,
+      "std_auroc": 0.010009719344431338
+    },
+    "2026": {
+      "trial": 1,
+      "config": {
+        "hidden": [
+          32
+        ],
+        "norm": "none",
+        "activation": "gelu",
+        "dropout": 0.25,
+        "lr": 0.001687023975571048,
+        "weight_decay": 3.1622776601683795e-05,
+        "batch_size": 256,
+        "smoothing": 0.0,
+        "class_weight": false,
+        "scaling": "robust",
+        "interactions": false,
+        "domain_features": false
+      },
+      "scores": [
+        0.8100529657829005,
+        0.8034444997011115,
+        0.8121122614544559,
+        0.8154866856548669,
+        0.7873070412064037
+      ],
+      "epochs": [
+        41,
+        33,
+        24,
+        42,
+        21
+      ],
+      "mean_auroc": 0.8056806907599476,
+      "std_auroc": 0.009992306787944834
+    }
+  },
+  "protocol_id": "8681c21e9e88ece1fdeeaf7268b010267837787d4cd3021a57da74ce120947e2",
+  "core_sha256": "69904b061028d4dac55bba9bb0c3d97681f90b6a8d2d1b57490f42e02e8bc854",
+  "code_sha256": "f5ec9d5d2f02bb66345380a71c8082cb11d5c60afd7e1152e0fe57d2b66f996d",
+  "versions": {
+    "numpy": "2.5.4",
+    "pandas": "2.3.3",
+    "scikit-learn": "1.9.1",
+    "torch": "2.15.0"
+  },
+  "screening": "Clip16: seed42 first; if mean exceeds same-seed v2, confirm seeds123 and2026. No automatic replacement or holdout evaluation.",
+  "missing_check": "Check normalized missing values against zero: robust center equals fitted median. Reuse identical representation instead of retraining."
+}

@@ -1,0 +1,78 @@
+{
+  "date": "2026-11-20",
+  "mode": "cv_only",
+  "bins": [
+    8,
+    16
+  ],
+  "config": {
+    "hidden": [
+      32
+    ],
+    "norm": "none",
+    "activation": "gelu",
+    "dropout": 0.25,
+    "lr": 0.001687023975571048,
+    "weight_decay": 3.1622776601683795e-05,
+    "batch_size": 256,
+    "smoothing": 0.0,
+    "class_weight": false,
+    "scaling": "robust",
+    "interactions": false,
+    "domain_features": false
+  },
+  "model_seed": 42,
+  "epochs": 200,
+  "patience": 25,
+  "threads": 4,
+  "device": "cpu",
+  "protocol_id": "8681c21e9e88ece1fdeeaf7268b010267837787d4cd3021a57da74ce120947e2",
+  "data_sha256": "5d217d2b9f87a52ff5c906c1309e8d8ee1def846360086324fa69816ef51f5d4",
+  "versions": {
+    "numpy": "2.5.4",
+    "pandas": "2.3.3",
+    "scikit-learn": "1.9.1",
+    "torch": "2.15.0"
+  },
+  "core_code_sha256": "69904b061028d4dac55bba9bb0c3d97681f90b6a8d2d1b57490f42e02e8bc854",
+  "code_sha256": "622a791db7f2289981222d7305ac1a8a46d784809683973181c9a1035314dba1",
+  "source_search_sha256": "b59c0efd43420934f9f1a6aab450dee1e55e1e1f76c1cd42624e311243b4d965",
+  "baseline": {
+    "trial": 4,
+    "config": {
+      "hidden": [
+        32
+      ],
+      "norm": "none",
+      "activation": "gelu",
+      "dropout": 0.25,
+      "lr": 0.001687023975571048,
+      "weight_decay": 3.1622776601683795e-05,
+      "batch_size": 256,
+      "smoothing": 0.0,
+      "class_weight": false,
+      "scaling": "robust",
+      "interactions": false,
+      "domain_features": false
+    },
+    "scores": [
+      0.8103990490234436,
+      0.8029321196959878,
+      0.8132475347991419,
+      0.8157466431574665,
+      0.7868373595350403
+    ],
+    "epochs": [
+      48,
+      52,
+      26,
+      52,
+      16
+    ],
+    "mean_auroc": 0.805832541242216,
+    "std_auroc": 0.010424527929702002
+  },
+  "holdout_evaluated": false,
+  "preprocessing": "Replace robust-scaled numeric values with clipped cumulative PLE; retain same special-code flags and missing fraction. Observed training quantiles; unique boundaries; constant columns zero.",
+  "decision_rule": "Screen only: positive seed42 mean difference is a candidate for later multiseed confirmation, never automatic v2 replacement."
+}

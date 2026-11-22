@@ -1,3 +1,10 @@
+## 추가 개선 실험 완료 — 2026-11-22
+
+PLE·2층 DNN·결측값·clipping 비교를 완료했습니다. 추가 CV 학습은 총 45회입니다.
+clipping ±16의 3-seed 평균 AUROC는 0.80596837, 기존 v2는 0.80589589로 차이가 작아 배포 모델은 v2를 유지합니다.
+[추가 실험 결과](docs/post_v2_remaining_results.md)에 전체 상태와 해석을 기록했습니다.
+아래 문서의 업로드 전 상태는 당시 기록이며, 이번 추가 실험 기록도 저장소에서 함께 관리합니다.
+
 ## Task 1 v2 다운로드
 
 - [고정 v2 모델 ZIP](https://github.com/ssung060908-prog/deep_learning_task/raw/refs/tags/task1-v2/models/task1-v2.zip): 모델만 받아 추론.

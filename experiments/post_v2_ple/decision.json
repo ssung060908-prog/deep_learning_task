@@ -1,0 +1,8 @@
+{
+  "selected": "keep_v2",
+  "additional_seed_fits": 0,
+  "new_cv_fits": 10,
+  "reused_cv_fits": 5,
+  "holdout_evaluated": false,
+  "new_weights": false
+}

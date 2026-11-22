@@ -1,0 +1,86 @@
+{
+  "date": "2026-11-21",
+  "candidates": [
+    {
+      "hidden": [
+        64,
+        32
+      ],
+      "norm": "none",
+      "activation": "gelu",
+      "dropout": 0.1,
+      "lr": 0.001,
+      "weight_decay": 0.0001,
+      "batch_size": 256,
+      "smoothing": 0.0,
+      "class_weight": false,
+      "scaling": "robust",
+      "interactions": false,
+      "domain_features": false
+    },
+    {
+      "hidden": [
+        64,
+        32
+      ],
+      "norm": "none",
+      "activation": "gelu",
+      "dropout": 0.1,
+      "lr": 0.003,
+      "weight_decay": 0.0001,
+      "batch_size": 256,
+      "smoothing": 0.0,
+      "class_weight": false,
+      "scaling": "robust",
+      "interactions": false,
+      "domain_features": false
+    },
+    {
+      "hidden": [
+        128,
+        64
+      ],
+      "norm": "none",
+      "activation": "gelu",
+      "dropout": 0.1,
+      "lr": 0.001,
+      "weight_decay": 0.0001,
+      "batch_size": 256,
+      "smoothing": 0.0,
+      "class_weight": false,
+      "scaling": "robust",
+      "interactions": false,
+      "domain_features": false
+    },
+    {
+      "hidden": [
+        128,
+        64
+      ],
+      "norm": "none",
+      "activation": "gelu",
+      "dropout": 0.1,
+      "lr": 0.003,
+      "weight_decay": 0.0001,
+      "batch_size": 256,
+      "smoothing": 0.0,
+      "class_weight": false,
+      "scaling": "robust",
+      "interactions": false,
+      "domain_features": false
+    }
+  ],
+  "seeds": [
+    42,
+    123,
+    2026
+  ],
+  "initial_epochs": 200,
+  "patience": 25,
+  "threads": 4,
+  "device": "cpu",
+  "holdout_evaluated": false,
+  "screening": "Confirm at most two highest seed42 mean candidates strictly above v2 seed42; otherwise stop.",
+  "confirmation": "Compare all three seed means against v2. Report raw differences; no automatic new weights or holdout evaluation.",
+  "capped_policy": "If a selected candidate has not reached patience at epoch200, extend to500 before interpreting."
+}
