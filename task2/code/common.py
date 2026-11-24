@@ -20,7 +20,6 @@ from zoneinfo import ZoneInfo
 import numpy as np
 import pandas as pd
 import torch
-import torchvision
 from sklearn.metrics import (
     accuracy_score,
     balanced_accuracy_score,
@@ -34,7 +33,7 @@ from torch import nn
 from torch.nn import functional as F
 from torch.utils.data import DataLoader
 
-from data import ImageDataset, load_records, make_splits, split_summary
+from data import GEOMETRY_POLICIES, ImageDataset, load_records, make_splits, split_summary
 from training_state import STATE_NAME, atomic_save, capture_rng, check_metadata, check_progress, read_state, restore_rng
 
 TASK_DIR = Path(__file__).resolve().parents[1]
@@ -87,6 +86,10 @@ def resolve_device(name: str) -> torch.device:
 
 def build_model(model_name: str) -> nn.Module:
     """Use the original model families; never load external pretrained weights."""
+    if model_name == "resnet" and os.environ.get("TASK2_VISION_WHEEL"):
+        from local_cpu import resnet18
+        return resnet18()
+    import torchvision
     if model_name == "vgg":
         return torchvision.models.vgg11(weights=None, num_classes=2)
     if model_name == "resnet":
@@ -124,7 +127,8 @@ def seed_worker(worker_id: int) -> None:
 
 def make_loader(records: pd.DataFrame, config: dict, training: bool) -> DataLoader:
     dataset = ImageDataset(records, task_path(config["data_root"]), image_size=config["image_size"],
-                           augment=training and config.get("geometric_augmentation", False))
+                           augment=training and config.get("geometric_augmentation", False),
+                           geometry_mode=config.get("geometry_mode", "flip_rotate"))
     return DataLoader(
         dataset, batch_size=config["batch_size"], shuffle=training,
         num_workers=config["num_workers"], pin_memory=config["resolved_device"].startswith("cuda"),
@@ -205,6 +209,9 @@ def train(model_name: str, config: dict, smoke_test: bool = False, run_name: str
     config.setdefault("geometric_augmentation", False)
     if type(config["geometric_augmentation"]) is not bool:
         raise ValueError("geometric_augmentation must be a boolean")
+    geometry_mode = config.get("geometry_mode", "flip_rotate")
+    if geometry_mode not in GEOMETRY_POLICIES:
+        raise ValueError(f"Unknown geometry_mode: {geometry_mode!r}")
     validate_config(config)
     setup_runtime(config["seed"], config["cpu_threads"])
     device = resolve_device(config["device"])
@@ -224,7 +231,12 @@ def train(model_name: str, config: dict, smoke_test: bool = False, run_name: str
     }
     source_hashes["labels.csv"] = hashlib.sha256((task_path(config["data_root"]) / "labels.csv").read_bytes()).hexdigest()
     versions = {name: importlib.metadata.version(name) for name in
-                ("torch", "torchvision", "numpy", "pandas", "Pillow", "scikit-learn")}
+                ("torch", "numpy", "pandas", "scikit-learn")}
+    if os.environ.get("TASK2_VISION_WHEEL"):
+        from local_cpu import versions as local_versions
+        versions.update(local_versions())
+    else:
+        versions.update({name: importlib.metadata.version(name) for name in ("torchvision", "Pillow")})
     versions["runtime"] = {
         "python": sys.version, "executable": sys.executable, "platform": platform.platform(),
         "cuda_build": torch.version.cuda, "cudnn_version": torch.backends.cudnn.version(),
@@ -275,7 +287,7 @@ def train(model_name: str, config: dict, smoke_test: bool = False, run_name: str
         write_json(run_dir / "augmentation.json", {
             "training_only": True,
             "enabled": config["geometric_augmentation"],
-            "policy": "horizontal flip p=0.5; rotation uniform [-7,7] deg expand=True before letterbox"
+            "policy": GEOMETRY_POLICIES[geometry_mode]
             if config["geometric_augmentation"] else "none",
             "validation_and_inference": "unchanged preprocessing version 1",
         })
@@ -419,6 +431,8 @@ def training_cli(model_name: str) -> None:
     parser.add_argument("--epochs", type=int)
     parser.add_argument("--batch-size", type=int)
     parser.add_argument("--image-size", type=int)
+    parser.add_argument("--geometry-mode", choices=GEOMETRY_POLICIES,
+                        help="Enable the selected training-only geometric augmentation")
     parser.add_argument("--device")
     parser.add_argument("--run-name")
     parser.add_argument("--resume", type=Path, help="existing run directory or last_training_state.pt; requires identical config/source/environment")
@@ -429,4 +443,6 @@ def training_cli(model_name: str) -> None:
         value = getattr(args, key)
         if value is not None:
             config[key] = value
+    if args.geometry_mode is not None:
+        config.update(geometric_augmentation=True, geometry_mode=args.geometry_mode)
     train(model_name, config, smoke_test=args.smoke_test, run_name=args.run_name, resume=args.resume)

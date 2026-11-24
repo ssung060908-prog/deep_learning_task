@@ -1,33 +1,50 @@
 """Shared image loading and patient-group validation split for Task 2."""
 
 from pathlib import Path
+import os
 
 import numpy as np
 import pandas as pd
 import torch
-from torchvision.transforms import InterpolationMode
-from torchvision.transforms import functional as TF
-from PIL import Image, ImageOps
 from sklearn.model_selection import StratifiedGroupKFold
 from torch.utils.data import Dataset
 
 
 REQUIRED_COLUMNS = ("sample_id", "path", "label", "patient_group")
+GEOMETRY_POLICIES = {
+    "flip_rotate": "horizontal flip p=0.5; rotation uniform [-7,7] deg expand=True before letterbox",
+    "flip_only": "horizontal flip p=0.5 before letterbox",
+    "rotate_only": "rotation uniform [-7,7] deg expand=True before letterbox",
+}
 
 
-def load_image_tensor(image_path: Path, image_size: int = 224, augment: bool = False) -> torch.Tensor:
+def load_image_tensor(
+    image_path: Path, image_size: int = 224, augment: bool = False,
+    geometry_mode: str = "flip_rotate",
+) -> torch.Tensor:
     """Apply identical preprocessing during training and label-free inference."""
+    flip = augment and torch.rand(()).item() < 0.5
+    angle = torch.empty(()).uniform_(-7.0, 7.0).item() if augment else 0.0
+    if os.environ.get("TASK2_PIL_PYTHON"):
+        from local_cpu import pixels as local_pixels
+        values = local_pixels(image_path, image_size, augment, flip and geometry_mode != "rotate_only",
+                              0.0 if geometry_mode == "flip_only" else angle)
+        return torch.from_numpy((values - 0.5) / 0.5).permute(2, 0, 1).contiguous()
+    from torchvision.transforms import InterpolationMode
+    from torchvision.transforms import functional as TF
+    from PIL import Image, ImageOps
     with Image.open(image_path) as image:
         image = image.convert("RGB")
         if augment:
             # Resize first for inexpensive, single-image training augmentation.
             # expand=True preserves all image corners before the final letterbox.
             image.thumbnail((image_size, image_size), Image.Resampling.BILINEAR)
-            if torch.rand(()).item() < 0.5:
+            # Match the legacy RNG sequence across all three policies.
+            if flip and geometry_mode != "rotate_only":
                 image = ImageOps.mirror(image)
-            angle = torch.empty(()).uniform_(-7.0, 7.0).item()
-            image = TF.rotate(image, angle, interpolation=InterpolationMode.BILINEAR,
-                              expand=True, fill=0)
+            if geometry_mode != "flip_only":
+                image = TF.rotate(image, angle, interpolation=InterpolationMode.BILINEAR,
+                                  expand=True, fill=0)
         image = ImageOps.pad(
             image, (image_size, image_size),
             method=Image.Resampling.BILINEAR, color=(0, 0, 0),
@@ -130,11 +147,12 @@ class ImageDataset(Dataset):
 
     def __init__(
         self, records: pd.DataFrame, data_root: Path, image_size: int = 224,
-        augment: bool = False,
+        augment: bool = False, geometry_mode: str = "flip_rotate",
     ):
         if image_size <= 0:
             raise ValueError("image_size must be positive")
         self.augment = bool(augment)
+        self.geometry_mode = geometry_mode
         self.records = records.reset_index(drop=True).copy()
         self.data_root = Path(data_root).resolve()
         self.image_size = image_size
@@ -144,5 +162,8 @@ class ImageDataset(Dataset):
 
     def __getitem__(self, index: int) -> tuple[torch.Tensor, torch.Tensor]:
         row = self.records.iloc[index]
-        tensor = load_image_tensor(self.data_root / row["path"], self.image_size, augment=self.augment)
+        tensor = load_image_tensor(
+            self.data_root / row["path"], self.image_size,
+            augment=self.augment, geometry_mode=self.geometry_mode,
+        )
         return tensor, torch.tensor(int(row["label"]), dtype=torch.long)
